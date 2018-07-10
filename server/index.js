@@ -25,7 +25,7 @@ var opts = {
 //     console.log("DATA: ", data);
 //     if (err) return console.log(err);
 //     allKeys = data.Contents.map(
-//       val => `https://s3.amazonaws.com/pastorraymp3/${val.Key}`
+//       val => `https://s3.amazonaws.com/${process.env.BUCKET_NAME}/${val.Key}`
 //     );
 
 // if (data.IsTruncated) listAllKeys(data.NextContinuationToken, cb);
@@ -37,7 +37,7 @@ app.get("/messages", (req, res) => {
     console.log("DATA: ", data);
     if (err) return console.log(err);
     allKeys = data.Contents.map(
-      val => `https://s3.amazonaws.com/pastorraymp3/${val.Key}`
+      val => `https://s3.amazonaws.com/${process.env.BUCKET_NAME}/${val.Key}`
     );
     console.log("All Keys", allKeys);
     res.status(200).json(allKeys);
