@@ -16,7 +16,7 @@ const s3 = new AWS.S3({
 var allKeys = [];
 // function listAllKeys(token, cb) {
 var opts = {
-  Bucket: "pastorraymp3",
+  Bucket: process.env.BUCKET_NAME,
   MaxKeys: 100
 };
 //   if (token) opts.ContinuationToken = token;
