@@ -19,6 +19,7 @@ class App extends Component {
     let { audios } = this.state;
     console.log(audios);
     let mappedAudios = audios[0]
+    {/* The value in the mapping is the url for the audios over s3 */}
       ? audios.map((val, i) => <audio controls key={i} src={val} />)
       : null;
     return <div>{mappedAudios}</div>;
